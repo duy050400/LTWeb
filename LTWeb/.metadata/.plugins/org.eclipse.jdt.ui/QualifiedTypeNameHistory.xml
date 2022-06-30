@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="nongsan.webmvc.dao.impl.LoginDao"/>
+    <fullyQualifiedTypeName name="nongsan.webmvc.model.User"/>
+    <fullyQualifiedTypeName name="nongsan.webmvc.dao.AdminDao"/>
+    <fullyQualifiedTypeName name="nongsan.webmvc.dao.impl.AdminDaoImpl"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Di\Desktop\LTWeb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2883259707.index
+1194884880.index
+230297066.index
+2857588935.index
+1872553131.index
+3735993014.index
+1488361719.index
