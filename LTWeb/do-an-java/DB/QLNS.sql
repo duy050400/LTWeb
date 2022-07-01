@@ -1,15 +1,8 @@
-﻿CREATE DATABASE QLNS
-USE QLNS
+﻿CREATE DATABASE QL
+USE QL
 
 -- TẠO BẢNG
-create table admin (
-	id int IDENTITY(1,1) PRIMARY KEY,
-	username nvarchar(50) UNIQUE not null,
-	password nvarchar(50) not null,
-	name nvarchar(50) not null
-)
 
-insert into admin values ('admin', '123456', N'Lê Thạch')
 
 create table users (
 	id int IDENTITY(1,1) PRIMARY KEY,
@@ -18,7 +11,8 @@ create table users (
 	phone nvarchar(20) not null,
 	username nvarchar(50) UNIQUE not null,
 	password nvarchar(50) not null,
-	created date not null
+	created date not null,
+    isAdmin int not null
 )
 
 
