@@ -6,6 +6,7 @@ public class Order {
 	private List<Item> items;
 	private double sumPrice;
 	private String created;
+	
 	public String getId() {
 		return id;
 	}

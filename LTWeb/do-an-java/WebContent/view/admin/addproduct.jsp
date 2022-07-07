@@ -11,7 +11,7 @@
               <div class="card-body">
                 <div class="card-title">Thêm sản phẩm</div>
                 <hr>
-                <form method="post" action="${pageContext.request.contextPath}/admin/product/add">
+                <form method="post" action="${pageContext.request.contextPath}/admin/product/add" enctype="multipart/form-data">
                 
                
                   <div class="form-group">
@@ -72,6 +72,7 @@
                 
                  <div class="form-group">
                     <label for="input-1">Ảnh đại diện</label>
+                    <input type="file" name="image" accept="image/*">
                     <input type="text" class="form-control" id="input-1" placeholder="Tên hình" name="product-image">
                   </div>
                <div class="form-footer">

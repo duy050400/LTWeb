@@ -13,22 +13,20 @@ import nongsan.webmvc.model.User;
 import nongsan.webmvc.service.AdminService;
 import nongsan.webmvc.service.impl.AdminServicesImpl;
 
-
-
 public class AdminEditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	AdminService adminService = new AdminServicesImpl();
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		int user_id = Integer.parseInt(req.getParameter("user-id"));
-        User user = adminService.get(user_id);
-        req.setAttribute("user", user);
+		User user = adminService.get(user_id);
+		req.setAttribute("user", user);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/editadmin.jsp");
 		dispatcher.forward(req, resp);
-		
-	
+
 	}
 
 	@Override
@@ -43,17 +41,12 @@ public class AdminEditController extends HttpServlet {
 		String user_password = req.getParameter("user-password");
 		String user_created = req.getParameter("user-created");
 		String is_admin = req.getParameter("is_admin");
-		
-		int is_Admin;
+
+		int is_Admin = 1;
 		if (is_admin == null) {
 			is_Admin = 0;
-		}if(is_admin.equals("1")){
-			is_Admin = 1;
 		}
-		else {
-			is_Admin = 0;
-		}
-		
+
 		User admin = new User();
 		admin.setName(user_name);
 		admin.setEmail(user_email);
@@ -66,5 +59,5 @@ public class AdminEditController extends HttpServlet {
 		adminService.edit(admin);
 		resp.sendRedirect(req.getContextPath() + "/admin/admin/list");
 
-	}  
+	}
 }

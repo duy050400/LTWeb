@@ -21,8 +21,9 @@ public class AdminDeleteController extends HttpServlet {
 		String admin_id = req.getParameter("user-id");
 		adminService.delete(admin_id);	
 		req.setAttribute("adminlist", adminService.getAll());   
-		RequestDispatcher dispatcherUser  = req.getRequestDispatcher("/view/admin/admin.jsp");
-		dispatcherUser.forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/admin/admin/list");
+		//RequestDispatcher dispatcherUser  = req.getRequestDispatcher("/view/admin/admin.jsp");
+		//dispatcherUser.forward(req, resp);
 	}
 }
 
