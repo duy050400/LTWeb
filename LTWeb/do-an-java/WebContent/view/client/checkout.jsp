@@ -36,10 +36,10 @@
               <div class="col-md-8">
                 <div class="checkout-left">
                   <div class="panel-group" >
-                   <c:if test="${sessionScope.username == null}">
+                   <c:if test="${sessionScope.account == null}">
                    		<p> Bạn cần đăng nhập để thanh toán! Đăng nhập <a href="${pageContext.request.contextPath}/view/client/login" style="color: #754110">tại đây!</a></p>
                    </c:if>
-				 <c:if test="${sessionScope.username != null}">
+				 <c:if test="${sessionScope.account != null}">
                     <!-- Shipping Address -->
                     <div class="panel panel-default aa-checkout-billaddress">
                       <div class="panel-heading">

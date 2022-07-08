@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : May 5, 2020, 10:57:00 PM
-    Author     : LENOVO
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -92,20 +87,18 @@
 						<div class="aa-product-inner">
 							<!-- start prduct navigation -->
 							<ul class="nav nav-tabs aa-products-tab">
-								<li class="active"><a href="#raucu" data-toggle="tab">Rau
-										Củ Quả</a></li>
-								<li><a href="#hat" data-toggle="tab">Các Loại Hạt</a></li>
-								<li><a href="#traicay" data-toggle="tab">Trái Cây </a></li>
-								<li><a href="#matong" data-toggle="tab">Mật Ong & Tinh
-										Dầu</a></li>
+								<li class="active"><a href="#vanhoc" data-toggle="tab">Văn Học</a></li>
+								<li><a href="#thieunhi" data-toggle="tab">Thiếu Nhi</a></li>
+								<li><a href="#lichsu" data-toggle="tab">Lịch Sử </a></li>
+								<li><a href="#kinhte" data-toggle="tab">Kinh Tế</a></li>
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content">
 								<!-- Start men product category -->
-								<div class="tab-pane fade in active" id="raucu">
+								<div class="tab-pane fade in active" id="vanhoc">
 									<ul class="aa-product-catg">
 										<!-- start single product item -->
-										<c:forEach items="${product_raucu}" var="product" end="7">
+										<c:forEach items="${product_vanhoc}" var="product" end="7">
 											<li>
 												<figure>
 													<a class="aa-product-img"
@@ -153,10 +146,10 @@
 								</div>
 								<!-- / men product category -->
 								<!-- start women product category -->
-								<div class="tab-pane fade" id="hat">
+								<div class="tab-pane fade" id="thieunhi">
 									<ul class="aa-product-catg">
 										<!-- start single product item -->
-										<c:forEach items="${product_hat}" var="product" end="7">
+										<c:forEach items="${product_thieunhi}" var="product" end="7">
 											<li>
 												<figure>
 													<a class="aa-product-img"
@@ -203,10 +196,10 @@
 								</div>
 								<!-- / women product category -->
 								<!-- start sports product category -->
-								<div class="tab-pane fade" id="traicay">
+								<div class="tab-pane fade" id="lichsu">
 									<ul class="aa-product-catg">
 										<!-- start single product item -->
-										<c:forEach items="${product_traicay}" var="product" end="7">
+										<c:forEach items="${product_lichsu}" var="product" end="7">
 											<li>
 												<figure>
 													<a class="aa-product-img"
@@ -253,10 +246,10 @@
 								</div>
 								<!-- / sports product category -->
 								<!-- start electronic product category -->
-								<div class="tab-pane fade" id="matong">
+								<div class="tab-pane fade" id="kinhte">
 									<ul class="aa-product-catg">
 										<!-- start single product item -->
-										<c:forEach items="${product_matong}" var="product" end="7">
+										<c:forEach items="${product_kinhte}" var="product" end="7">
 											<li>
 												<figure>
 													<a class="aa-product-img"

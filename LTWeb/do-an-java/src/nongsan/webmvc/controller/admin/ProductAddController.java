@@ -52,7 +52,6 @@ public class ProductAddController extends HttpServlet {
 			String product_desc = req.getParameter("product-desc");
 			String product_content = req.getParameter("product-content");
 			String product_discount = req.getParameter("product-discount");
-			String product_image = req.getParameter("product-image");
 			String product_day = req.getParameter("product-day");
 			
 			Part part = req.getPart("image");
