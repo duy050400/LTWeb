@@ -44,14 +44,6 @@ public class HomeController extends HttpServlet{
 		List<Product> product_kinhte= productService.getProductById(1018);
 		req.setAttribute("product_kinhte", product_kinhte);	
 		
-		// Product mới
-		List<Product> product_new= productService.getProductById(5);
-		req.setAttribute("product_new", product_new);	
-				
-		// Product bán chạy
-		List<Product> product_banchay= productService.getProductById(6);
-		req.setAttribute("product_banchay", product_banchay);	
-		
 		List<Product> productList = productService.getAll();
 		req.setAttribute("productlist", productList);	
 		//Giá giảm

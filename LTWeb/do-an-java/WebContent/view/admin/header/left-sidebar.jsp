@@ -49,11 +49,7 @@
             <i class="zmdi zmdi-shopping-cart"></i> <span>Chi Tiết Đơn Hàng</span>
           </a>
         </li>
-        <li>
-          <a href="${pageContext.request.contextPath}/admin/review/list">
-            <i class="zmdi zmdi-calendar-check"></i> <span>Review</span>
-          </a>   
-        </li>
+       
         <li>
           <a href="${pageContext.request.contextPath}/admin/new/list">
             <i class="icon-envelope-open"></i> <span>Tin tức</span>

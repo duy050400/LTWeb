@@ -1,7 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:url value="/view/client/assets" var="url" />
+<c:url value="/view/upload/panel" var="url" />
 <!-- Start header section -->
 <jsp:include page="./header/mainHeader.jsp" flush="true" />
 <!-- / header section -->
@@ -21,11 +21,8 @@
 						<div class="col-md-5 no-padding">
 							<div class="aa-promo-left">
 								<div class="aa-promo-banner">
-									<img src="${url}/images/section1_tc.jpg" alt="dâu tây Đà Lạt">
-									<div class="aa-prom-content">
-										<span>Giảm giá 35%</span>
-										<h4>Dâu tây Đà Lạt</h4>
-									</div>
+									<img src="${url}/section1.jpg" alt="dâu tây Đà Lạt">
+									
 								</div>
 							</div>
 						</div>
@@ -34,38 +31,26 @@
 							<div class="aa-promo-right">
 								<div class="aa-single-promo-right">
 									<div class="aa-promo-banner">
-										<img src="${url}/images/section2_tc.jpg" alt="hạt tiêu daklak">
-										<div class="aa-prom-content">
-											<span>Sản Phẩm độc quyền</span>
-											<h4>Hạt tiêu DakLak</h4>
-										</div>
+										<img src="${url}/section2.jpg" alt="hạt tiêu daklak">
+										
 									</div>
 								</div>
 								<div class="aa-single-promo-right">
 									<div class="aa-promo-banner">
-										<img src="${url}/images/section3_tc.jpg" alt="img">
-										<div class="aa-prom-content">
-											<span>Sản phẩm nhập khẩu</span>
-											<h4>Cherry Mỹ</h4>
-										</div>
+										<img src="${url}/section3.jpg" alt="img">
+										
 									</div>
 								</div>
 								<div class="aa-single-promo-right">
 									<div class="aa-promo-banner">
-										<img src="${url}/images/section4_tc.jpg" alt="img">
-										<div class="aa-prom-content">
-											<span>Giảm giá 25%</span>
-											<h4>Tinh Dầu Sả</h4>
-										</div>
+										<img src="${url}/section4.jpeg" alt="img">
+										
 									</div>
 								</div>
 								<div class="aa-single-promo-right">
 									<div class="aa-promo-banner">
-										<img src="${url}/images/section5_tc.jpg" alt="img">
-										<div class="aa-prom-content">
-											<span>Sản phẩm độc quyền</span>
-											<h4>Mật ong rừng Tây Bắc</h4>
-										</div>
+										<img src="${url}/section5.jpg" alt="img">
+										
 									</div>
 								</div>
 							</div>

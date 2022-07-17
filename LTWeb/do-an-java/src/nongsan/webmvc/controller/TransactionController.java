@@ -15,6 +15,7 @@ import nongsan.webmvc.model.Order;
 import nongsan.webmvc.model.Ordered;
 
 import nongsan.webmvc.model.Transactions;
+import nongsan.webmvc.model.User;
 import nongsan.webmvc.service.OrderedService;
 import nongsan.webmvc.service.TransactionService;
 import nongsan.webmvc.service.impl.OrderedServiceImpl;
@@ -39,7 +40,14 @@ public class TransactionController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=UTF-8");
-		String tr_usersession = req.getParameter("transaction_usersession");
+		HttpSession session = req.getSession(true);
+		
+		
+		
+		User u = new User();
+		 u = (User)session.getAttribute("account");
+		
+		String tr_usersession = u.getUsername();
 		String tr_username = req.getParameter("transaction_name");
 		String tr_usermail = req.getParameter("transaction_email");
 		String tr_userphone = req.getParameter("transaction_phone");
@@ -75,7 +83,7 @@ public class TransactionController extends HttpServlet {
 					maxid = transactions2.getId();
 			}
 		}
-		HttpSession session = req.getSession(true);
+		
 		Order order = (Order) session.getAttribute("order");
 		List<Item> listItems = order.getItems();
 		for(Item item: listItems)

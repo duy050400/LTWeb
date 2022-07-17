@@ -32,10 +32,8 @@
                   <div>
                     <select class="form-control valid" id="input-4" name="new-author"" >
                         <option>NULL</option>
-                        <option>Thịnh Dương</option>
-                        <option>Lê Thạch</option> 
-                        <option>Lan Ngọc</option>
-                        <option>Kim Vy</option>
+                        <option>ADMIN</option>
+           
                     </select>
                   </div>
                   </div>
