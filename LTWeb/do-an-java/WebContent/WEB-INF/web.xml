@@ -313,6 +313,26 @@
        <url-pattern>/view/client/product</url-pattern>
    </servlet-mapping>
    
+   <servlet>
+       <servlet-name>MyOrder</servlet-name>
+       <servlet-class>nongsan.webmvc.controller.MyOrderController</servlet-class>
+   </servlet>
+ 
+   <servlet-mapping>
+       <servlet-name>MyOrder</servlet-name>
+       <url-pattern>/view/client/my-order</url-pattern>
+   </servlet-mapping>
+   
+      <servlet>
+       <servlet-name>Profile</servlet-name>
+       <servlet-class>nongsan.webmvc.controller.ProfileController</servlet-class>
+   </servlet>
+ 
+   <servlet-mapping>
+       <servlet-name>Profile</servlet-name>
+       <url-pattern>/view/client/profile</url-pattern>
+   </servlet-mapping>
+   
     <servlet>
        <servlet-name>ProductListOfCategoryClient</servlet-name>
        <servlet-class>nongsan.webmvc.controller.ProductListOfCategoryClientController</servlet-class>

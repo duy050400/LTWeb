@@ -9,6 +9,7 @@ public class User{
 	private String password;
 	private String created;
 	private int isAdmin;
+	private String publickey;
 
 	public User(String username, String password) {
 		super();
@@ -16,17 +17,22 @@ public class User{
 		this.password = password;
 	}
 	
-	public User(int id, String username, String password, String phone, String email, String name, String created, int isAdmin) {
+	
+	public User(int id, String name, String email, String phone, String username, String password, String created,
+			int isAdmin, String publickey) {
 		super();
 		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
 		this.username = username;
 		this.password = password;
-		this.phone = phone;
-		this.email = email;
-		this.name = name;
 		this.created = created;
 		this.isAdmin = isAdmin;
+		this.publickey = publickey;
 	}
+
+
 	public User(String username, String password, String email, String phone, String name, String created, int isAdmin)
 	{
 		super();
@@ -42,6 +48,8 @@ public class User{
 	{
 		super();
 	}
+
+	
 
 	public int getId() {
 		return id;
@@ -107,11 +115,25 @@ public class User{
 		this.isAdmin = isAdmin;
 	}
 
+
+	public String getPublickey() {
+		return publickey;
+	}
+
+
+	public void setPublickey(String publickey) {
+		this.publickey = publickey;
+	}
+
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", username=" + username
-				+ ", password=" + password + ", created=" + created + ", isAdmin=" + isAdmin + "]";
+				+ ", password=" + password + ", created=" + created + ", isAdmin=" + isAdmin + ", publickey="
+				+ publickey + "]";
 	}
+
+	
 	
 	
 	

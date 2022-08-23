@@ -34,6 +34,7 @@ public class LoginDao {
 				user.setPassword(rs.getString("password"));
 				user.setCreated(rs.getString("created"));
 				user.setIsAdmin(rs.getInt("isAdmin"));
+				user.setPublickey(rs.getString("publicKey"));
 				return user;
 			}
 			

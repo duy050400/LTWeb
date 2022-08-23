@@ -1,5 +1,7 @@
 package nongsan.webmvc.service;
 
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.List;
 
 import nongsan.webmvc.model.Transactions;
@@ -13,8 +15,16 @@ public interface TransactionService {
  
 	Transactions get(int id); 
 	 
-	Transactions get(String name); 
+	List<Transactions> getByUsername(String username); 
  
 	List<Transactions> getAll(); 
-
+	
+	String hash(String idTransactions);
+	
+	PublicKey readPublickey(String src);
+	
+	String decryption(PublicKey publicKey, String text);
+	
+	
+//	String encryption(PrivateKey privateKey, String text );
 }

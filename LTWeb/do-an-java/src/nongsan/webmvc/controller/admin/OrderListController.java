@@ -14,9 +14,7 @@ import nongsan.webmvc.model.Transactions;
 import nongsan.webmvc.service.TransactionService;
 import nongsan.webmvc.service.impl.TransactionServicesImpl;
 
-/**
- * Servlet implementation class OrderListController
- */
+
 
 public class OrderListController extends HttpServlet {
 	private static final long serialVersionUID = 1L; 

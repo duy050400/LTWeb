@@ -72,6 +72,7 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 				transaction.setAmount(rs.getString("amount"));
 				transaction.setPayment(rs.getString("payment"));
 				transaction.setCreated(rs.getString("created"));
+				transaction.setHash(rs.getString("hash"));
 				return transaction;
 
 			}
@@ -83,7 +84,7 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 	
 	@Override 
 	public void edit(Transactions transaction) { 
-	String sql = "Update transactions set user_name =?, user_mail =?, user_phone =?, address= ?,message=?,amount=?,payment=?, status=? where id=?";
+	String sql = "Update transactions set user_name =?, user_mail =?, user_phone =?, address= ?,message=?,amount=?,payment=?, status=?, hash=? where id=?";
 
 		new connectDB();
 		Connection con = connectDB.getConnect();
@@ -98,7 +99,8 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 			ps.setString(6, transaction.getAmount());
 			ps.setInt(7, Integer.parseInt(transaction.getPayment()));
 			ps.setString(8,transaction.getStatus());
-			ps.setInt(9,transaction.getId());
+			ps.setString(9,transaction.getHash());
+			ps.setInt(10,transaction.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -106,8 +108,38 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 	} 
 	
 	@Override 
-	public Transactions get(String name) { 
-		return null; 
+	public List<Transactions> getByUsername(String username) { 
+		List<Transactions> transactions = new ArrayList<Transactions>(); 
+		String sql = "SELECT * FROM transactions where user_session = ?"; 
+		Connection conn = connectDB.getConnect(); 
+ 
+		try { 
+			PreparedStatement ps = conn.prepareStatement(sql); 
+			ps.setString(1,username);
+			ResultSet rs = ps.executeQuery(); 
+ 
+			while (rs.next()) { 
+				Transactions transaction = new Transactions(); 
+				transaction.setId(rs.getInt("id"));
+				transaction.setUser_session(rs.getString("user_session"));
+				transaction.setUser_name(rs.getString("user_name"));
+				transaction.setUser_mail(rs.getString("user_mail"));
+				transaction.setUser_phone(rs.getString("user_phone"));
+				transaction.setAddress(rs.getString("address"));
+				transaction.setMessage(rs.getString("message"));
+				transaction.setAmount(rs.getString("amount"));
+				transaction.setPayment(rs.getString("payment"));
+				transaction.setStatus(rs.getString("status"));
+				transaction.setCreated(rs.getString("created"));
+				transaction.setHash(rs.getString("hash"));
+				transactions.add(transaction); 
+			} 
+ 
+		} catch (SQLException e) { 
+			e.printStackTrace(); 
+		} 
+ 
+		return transactions; 
 	} 
  
 	@Override 
@@ -133,6 +165,7 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 				transaction.setPayment(rs.getString("payment"));
 				transaction.setStatus(rs.getString("status"));
 				transaction.setCreated(rs.getString("created"));
+				transaction.setHash(rs.getString("hash"));
 				transactions.add(transaction); 
 			} 
  
@@ -141,5 +174,11 @@ public class TransactionDaoImpl extends connectDB implements TransactionDao {
 		} 
  
 		return transactions; 
+	}
+	
+	public static void main(String[] args) {
+		TransactionDaoImpl daoImpl = new TransactionDaoImpl();
+	
+		System.out.println(daoImpl.getByUsername("nhatduy"));
 	}
 }

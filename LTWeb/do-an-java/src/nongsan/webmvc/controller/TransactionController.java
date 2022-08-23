@@ -41,12 +41,10 @@ public class TransactionController extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=UTF-8");
 		HttpSession session = req.getSession(true);
-		
-		
-		
+
 		User u = new User();
-		 u = (User)session.getAttribute("account");
-		
+		u = (User) session.getAttribute("account");
+
 		String tr_usersession = u.getUsername();
 		String tr_username = req.getParameter("transaction_name");
 		String tr_usermail = req.getParameter("transaction_email");
@@ -67,41 +65,40 @@ public class TransactionController extends HttpServlet {
 		transaction.setAmount(tr_amount);
 		transaction.setPayment(tr_payment);
 		transaction.setCreated(tr_created);
-	
+
 		transactionService.insert(transaction);
 
-		int maxid =0;
+		int maxid = 0;
 		List<Transactions> transactions = transactionService.getAll();
-		if(transactions.size() == 0)
-		{
+		if (transactions.size() == 0) {
 			maxid = 0;
-		}
-		else {
-			for(Transactions transactions2: transactions)
-			{
-				if(transactions2.getId()>=maxid)
+		} else {
+			for (Transactions transactions2 : transactions) {
+				if (transactions2.getId() >= maxid)
 					maxid = transactions2.getId();
 			}
 		}
-		
+
 		Order order = (Order) session.getAttribute("order");
 		List<Item> listItems = order.getItems();
-		for(Item item: listItems)
-		{
+		for (Item item : listItems) {
 			Ordered ordered = new Ordered();
 			ordered.setProduct_id(item.getProduct().getId());
 			ordered.setQty(item.getQty());
 			ordered.setTransacsion_id(String.valueOf(maxid));
 			orderedService.insert(ordered);
 		}
-		 if (session != null) {
-			 session.removeAttribute("order"); //remove session
-			 session.removeAttribute("sumprice"); //remove session
-			 session.removeAttribute("length_order"); //remove session
-		 }
-    resp.sendRedirect(req.getContextPath() + "/view/client/checkout");
-		
-	}
+		if (session != null) {
+			session.removeAttribute("order"); // remove session
+			session.removeAttribute("sumprice"); // remove session
+			session.removeAttribute("length_order"); // remove session
+		}
 
+		Transactions transactions2 = transactionService.get(maxid);
+		transactions2.setHash(transactionService.hash(transactions2.toString()));
+		transactionService.edit(transactions2);
+		resp.sendRedirect(req.getContextPath() + "/view/client/my-order");
+
+	}
 
 }

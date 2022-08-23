@@ -32,7 +32,6 @@ public class OrderEditController extends HttpServlet {
 		String id = req.getParameter("id");
 		Transactions transaction = transactionService.get(Integer.parseInt(id));
 		req.setAttribute("order", transaction);
-		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/editorder.jsp");
 		dispatcher.forward(req, resp);
 	}

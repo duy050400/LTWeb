@@ -26,6 +26,7 @@ public class UserServicesImpl implements UserService {
 		oldUSer.setPassword(newUser.getPassword());
 		oldUSer.setCreated(newUser.getCreated());
 		oldUSer.setIsAdmin(newUser.getIsAdmin());
+		oldUSer.setPublickey(newUser.getPublickey());
 		userDao.edit(oldUSer);
 
 	}

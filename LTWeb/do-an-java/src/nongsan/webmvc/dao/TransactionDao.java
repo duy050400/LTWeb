@@ -13,7 +13,7 @@ public interface TransactionDao {
  
 	Transactions get(int id); 
 	 
-	Transactions get(String name); 
+	List<Transactions> getByUsername(String username); 
  
 	List<Transactions> getAll(); 
 	

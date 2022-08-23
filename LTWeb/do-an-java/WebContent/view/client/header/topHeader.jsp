@@ -26,11 +26,12 @@
 							</c:if>
 							
 							<c:if test="${sessionScope.account != null}">
-								<li><a><strong>Chào</strong>
+								<li><a href="${pageContext.request.contextPath}/view/client/profile"><strong>Chào</strong>
 										${sessionScope.account.name }</a></li>
 								<li class="hidden-xs"><a
 									href="${pageContext.request.contextPath}/view/client/logout">Đăng
 										xuất</a></li>
+										<li class="hidden-xs"><a  href="${pageContext.request.contextPath}/view/client/my-order">My Order</a></li>
 							</c:if>
 							
 

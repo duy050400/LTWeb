@@ -12,6 +12,7 @@ public class Transactions {
 	private String payment;
 	private String message;
 	private String created;
+	private String hash;
 	
 	public Transactions() {
 		
@@ -105,13 +106,23 @@ public class Transactions {
 		this.created = created;
 	}
 
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+
 	@Override
 	public String toString() {
 		return "Transactions [id=" + id + ", status=" + status + ", user_session=" + user_session + ", user_name="
 				+ user_name + ", user_mail=" + user_mail + ", user_phone=" + user_phone + ", address=" + address
-				+ ", amount=" + amount + ", payment=" + payment + ", message=" + message + ", created=" + created + "]";
+				+ ", amount=" + amount + ", payment=" + payment + ", message=" + message + ", created=" + created
+				+ ", hash=" + hash + "]";
 	}
 
+	
 	
 	
 

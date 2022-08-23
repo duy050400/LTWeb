@@ -77,6 +77,7 @@ public class UserDaoImpl extends connectDB implements UserDao {
 				user.setPassword(rs.getString("password"));
 				user.setCreated(rs.getString("created"));
 				user.setIsAdmin(rs.getInt("isAdmin"));
+				user.setPublickey(rs.getString("publicKey"));
 			}
 			
 			
@@ -89,7 +90,7 @@ public class UserDaoImpl extends connectDB implements UserDao {
 	
 	@Override
 	public void edit(User user) {	
-		String sql = "Update users set name=?, email=?, phone=?, username=?, password=?, created=?, isAdmin=? where id=?";
+		String sql = "Update users set name=?, email=?, phone=?, username=?, password=?, created=?, isAdmin=?, publicKey=? where id=?";
 		new connectDB();
 		Connection con = connectDB.getConnect();
 
@@ -100,9 +101,11 @@ public class UserDaoImpl extends connectDB implements UserDao {
 			ps.setString(3, user.getPhone());
 			ps.setString(4, user.getUsername());
 			ps.setString(5, user.getPassword());
-			ps.setString(6,user.getCreated());
+			ps.setString(6, user.getCreated());
 			ps.setInt(7, user.getIsAdmin() );
-			ps.setInt(8,user.getId());
+			ps.setString(8, user.getPublickey());
+			ps.setInt(9,user.getId());
+			
 			
 			ps.executeUpdate();
 		} catch (SQLException e) {
